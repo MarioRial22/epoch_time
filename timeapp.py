@@ -21,5 +21,8 @@ class CustomHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 
 httpd = SocketServer.TCPServer(("", PORT), CustomHandler)
 
+if os.environ['PORT']:
+    port = int(os.environ['PORT'])
+    
 print "serving at port", PORT
 httpd.serve_forever()
