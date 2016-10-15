@@ -2,6 +2,7 @@
 import SimpleHTTPServer
 import SocketServer
 import time
+import os
 
 PORT = 80
 
