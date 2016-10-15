@@ -5,6 +5,8 @@ import time
 
 PORT = 80
 
+if os.environ['PORT']:
+    PORT = int(os.environ['PORT'])
 
 class CustomHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     def do_HEAD(self):
@@ -21,8 +23,7 @@ class CustomHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 
 httpd = SocketServer.TCPServer(("", PORT), CustomHandler)
 
-if os.environ['PORT']:
-    port = int(os.environ['PORT'])
+
     
 print "serving at port", PORT
 httpd.serve_forever()
