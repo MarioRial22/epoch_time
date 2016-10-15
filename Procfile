@@ -1,1 +1,1 @@
-web: python time.py --log-file -
+web: python timeapp.py --log-file -
